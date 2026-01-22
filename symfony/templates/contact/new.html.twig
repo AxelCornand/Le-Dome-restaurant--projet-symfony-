@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nous contacter - Restaurant Le Dôme{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h1 class="mb-4">
+                <i class="bi bi-envelope"></i> Nous Contacter
+            </h1>
+            
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="bi bi-geo-alt"></i> Adresse</h5>
+                    <p>10 rue chemin petit<br>69300 Caluire, France</p>
+                    <h5 class="card-title"><i class="bi bi-clock"></i> Horaires</h5>
+                    <p>
+                        <strong>Lundi - Samedi</strong><br>
+                        Déjeuner : 12h00 - 14h00<br>
+                        <small class="text-muted">Fermé le dimanche</small>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-lg-6">
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <h4 class="card-title mb-4">Envoyez-nous un message</h4>
+                    
+                    {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.firstName, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'Votre prénom'}}) }}
+                            {{ form_errors(form.firstName) }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.lastName, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'Votre nom'}}) }}
+                            {{ form_errors(form.lastName) }}
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+                        {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'votre@email.com'}}) }}
+                        {{ form_errors(form.email) }}
+                    </div>
+
+                    <div class="mb-3">
+                        {{ form_label(form.message, 'Message', {'label_attr': {'class': 'form-label'}}) }}
+                        {{ form_widget(form.message, {'attr': {'class': 'form-control', 'rows': 6, 'placeholder': 'Votre message...'}}) }}
+                        {{ form_errors(form.message) }}
+                    </div>
+
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-send"></i> Envoyer le message
+                        </button>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

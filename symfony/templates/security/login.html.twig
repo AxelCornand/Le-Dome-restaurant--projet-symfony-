@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion - Administration{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <h1 class="text-center mb-4">
+                        <i class="bi bi-shield-lock"></i> Connexion Admin
+                    </h1>
+
+                    {% if error %}
+                        <div class="alert alert-danger">
+                            {{ error.messageKey|trans(error.messageData, 'security') }}
+                        </div>
+                    {% endif %}
+
+                    {% if app.user %}
+                        <div class="alert alert-info">
+                            Vous êtes connecté en tant que {{ app.user.userIdentifier }}
+                            <a href="{{ path('app_logout') }}">Se déconnecter</a>
+                        </div>
+                    {% endif %}
+
+                    <form method="post">
+                        <div class="mb-3">
+                            <label for="inputEmail" class="form-label">Email</label>
+                            <input type="email" 
+                                   value="{{ last_username }}" 
+                                   name="_username" 
+                                   id="inputEmail" 
+                                   class="form-control" 
+                                   placeholder="votre@email.com"
+                                   autocomplete="email" 
+                                   required 
+                                   autofocus>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputPassword" class="form-label">Mot de passe</label>
+                            <input type="password" 
+                                   name="_password" 
+                                   id="inputPassword" 
+                                   class="form-control" 
+                                   placeholder="Votre mot de passe"
+                                   autocomplete="current-password" 
+                                   required>
+                        </div>
+
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+
+                        <div class="d-grid">
+                            <button class="btn btn-primary btn-lg" type="submit">
+                                <i class="bi bi-box-arrow-in-right"></i> Se connecter
+                            </button>
+                        </div>
+                    </form>
+
+                    <hr class="my-4">
+
+                    <div class="text-center">
+                        <a href="{{ path('app_home') }}" class="text-muted">
+                            <i class="bi bi-arrow-left"></i> Retour à l'accueil
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

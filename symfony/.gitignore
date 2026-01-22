@@ -1,0 +1,26 @@
+# Fichiers Docker et environnement
+.env.local
+.env.*.local
+
+# Dossier Symfony (sera généré)
+symfony/vendor/
+symfony/var/
+symfony/.env.local
+symfony/.env.local.php
+symfony/.env.*.local
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###

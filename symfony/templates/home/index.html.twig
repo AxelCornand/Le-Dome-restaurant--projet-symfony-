@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil - Restaurant Le Dôme{% endblock %}
+
+{% block body %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <h1 class="display-3 fw-bold mb-4">Bienvenue au Restaurant Le Dôme</h1>
+        <p class="lead mb-4">Une expérience culinaire authentique dans un cadre conviviale</p>
+        <a href="{{ path('app_reservation') }}" class="btn btn-primary btn-lg me-3">
+            <i class="bi bi-calendar-check"></i> Réserver une table
+        </a>
+        <a href="{{ path('app_menu') }}" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-book"></i> Découvrir notre menu
+        </a>
+    </div>
+</div>
+
+<!-- Présentation du restaurant -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h2 class="mb-4">Notre Histoire</h2>
+            <p class="lead">
+                Depuis 1994, Le Dôme propose une cuisine française traditionnelle 
+                revisitée avec des produits frais et de saison.
+            </p>
+            <p>
+                Notre chef, passionné par son métier, sélectionne avec soin 
+                chaque ingrédient pour vous offrir une expérience culinaire 
+                inoubliable. Dans un cadre élégant et chaleureux, notre équipe 
+                vous accueille pour un moment de partage et de convivialité.
+            </p>
+        </div>
+        <div class="col-lg-6 mb-4">
+            <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600" 
+                 class="img-fluid rounded shadow" alt="Restaurant">
+        </div>
+    </div>
+</div>
+
+<!-- Points forts -->
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Pourquoi nous choisir ?</h2>
+        <div class="row">
+            <div class="col-md-3 text-center mb-4">
+                <i class="bi bi-award display-4 text-primary mb-3"></i>
+                <h4>Qualité Premium</h4>
+                <p>Produits frais sélectionnés avec soin</p>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <i class="bi bi-people display-4 text-primary mb-3"></i>
+                <h4>Service Attentionné</h4>
+                <p>Une équipe professionnelle à votre écoute</p>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <i class="bi bi-house-heart display-4 text-primary mb-3"></i>
+                <h4>Ambiance Chaleureuse</h4>
+                <p>Un cadre convivial</p>
+            </div>
+            <div class="col-md-3 text-center mb-4">
+                <i class="bi bi-egg-fried display-4 text-primary mb-3"></i>
+                <h4>Chef Expérimenté</h4>
+                <p>Plus de 20 ans d'expérience culinaire</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Call to Action pour réservation -->
+<div class="container my-5">
+    <div class="card bg-primary text-white">
+        <div class="card-body text-center py-5">
+            <h2 class="card-title mb-3">Réservez votre table dès maintenant</h2>
+            <p class="lead mb-4">
+                Du lundi au samedi, de 12h à 14h<br>
+            </p>
+            <a href="{{ path('app_reservation') }}" class="btn btn-light btn-lg">
+                <i class="bi bi-calendar-plus"></i> Faire une réservation
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Horaires et informations -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="bi bi-clock display-4 text-primary mb-3"></i>
+                    <h4>Nos Horaires</h4>
+                    <p class="mb-1"><strong>Lundi - Samedi</strong></p>
+                    <p class="mb-1">Déjeuner : 12h00 - 14h00</p>
+                    <p>Dîner : 19h00 - 22h00</p>
+                    <p class="text-muted"><small>Fermé le dimanche</small></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="bi bi-geo-alt display-4 text-primary mb-3"></i>
+                    <h4>Nous Trouver</h4>
+                    <p>10 chemin petit</p>
+                    <p>69300 Caluire, France</p>
+                    <a href="#" class="btn btn-outline-primary btn-sm mt-2">
+                        <i class="bi bi-map"></i> Voir sur la carte
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body text-center">
+                    <i class="bi bi-telephone display-4 text-primary mb-3"></i>
+                    <h4>Nous Contacter</h4>
+                    <p><i class="bi bi-telephone"></i> 04 78 23 64 15</p>
+                    <p><i class="bi bi-envelope"></i> contact@ledôme.fr</p>
+                    <a href="{{ path('app_contact') }}" class="btn btn-outline-primary btn-sm mt-2">
+                        <i class="bi bi-send"></i> Envoyer un message
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

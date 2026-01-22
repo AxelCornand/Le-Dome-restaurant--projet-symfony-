@@ -1,0 +1,79 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Réserver une table - Restaurant Le Dôme{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <h1 class="text-center mb-2">
+                <i class="bi bi-calendar-check"></i> Réserver une table
+            </h1>
+
+            <div class="card shadow">
+                <div class="card-body p-4">
+                    <div class="alert alert-info">
+                        <h5><i class="bi bi-info-circle"></i> Horaires de réservation</h5>
+                        <p class="mb-0">
+                            <strong>Du lundi au samedi</strong> de 12h00 à 14h00<br>
+                        </p>
+                    </div>
+
+                    {{ form_start(form, {'attr': {'class': 'needs-validation', 'novalidate': 'novalidate'}}) }}
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.firstName, 'Prénom', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.firstName, {'attr': {'class': 'form-control', 'placeholder': 'Votre prénom'}}) }}
+                            {{ form_errors(form.firstName) }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.lastName, 'Nom', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.lastName, {'attr': {'class': 'form-control', 'placeholder': 'Votre nom'}}) }}
+                            {{ form_errors(form.lastName) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': 'votre@email.com'}}) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.phone, 'Téléphone', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.phone, {'attr': {'class': 'form-control', 'placeholder': '06 12 34 56 78'}}) }}
+                            {{ form_errors(form.phone) }}
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.reservationDate, 'Date et heure', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.reservationDate, {'attr': {'class': 'form-control'}}) }}
+                            {{ form_errors(form.reservationDate) }}
+                            <small class="text-muted">Du lundi au samedi, entre 12h00 et 14h00</small>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            {{ form_label(form.numberOfPeople, 'Nombre de personnes', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(form.numberOfPeople, {'attr': {'class': 'form-control', 'min': 1, 'max': 20}}) }}
+                            {{ form_errors(form.numberOfPeople) }}
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-4">
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="bi bi-check-circle"></i> Confirmer ma réservation
+                        </button>
+                        <a href="{{ path('app_home') }}" class="btn btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Retour à l'accueil
+                        </a>
+                    </div>
+
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

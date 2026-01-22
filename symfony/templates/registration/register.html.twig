@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription - Administration{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body p-5">
+                    <h1 class="text-center mb-4">
+                        <i class="bi bi-person-plus"></i> Créer un compte Admin
+                    </h1>
+
+                    {{ form_errors(registrationForm) }}
+
+                    {{ form_start(registrationForm) }}
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'admin@legourmet.fr'}}) }}
+                            {{ form_errors(registrationForm.email) }}
+                        </div>
+
+                        <div class="mb-3">
+                            {{ form_label(registrationForm.plainPassword, 'Mot de passe', {'label_attr': {'class': 'form-label'}}) }}
+                            {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': 'Entrez votre mot de passe'}}) }}
+                            {{ form_errors(registrationForm.plainPassword) }}
+                            <small class="text-muted">Le mot de passe doit contenir au moins 6 caractères</small>
+                        </div>
+
+                        {% if registrationForm.agreeTerms is defined %}
+                        <div class="mb-3 form-check">
+                            {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input'}}) }}
+                            {{ form_label(registrationForm.agreeTerms, null, {'label_attr': {'class': 'form-check-label'}}) }}
+                            {{ form_errors(registrationForm.agreeTerms) }}
+                        </div>
+                        {% endif %}
+
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-person-plus"></i> S'inscrire
+                            </button>
+                        </div>
+                    {{ form_end(registrationForm) }}
+
+                    <hr class="my-4">
+
+                    <div class="text-center">
+                        <p class="mb-0">Vous avez déjà un compte ?</p>
+                        <a href="{{ path('app_login') }}" class="btn btn-outline-secondary mt-2">
+                            <i class="bi bi-box-arrow-in-right"></i> Se connecter
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-3">
+                <a href="{{ path('app_home') }}" class="text-muted">
+                    <i class="bi bi-arrow-left"></i> Retour à l'accueil
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

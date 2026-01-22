@@ -1,0 +1,352 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Notre Menu - Restaurant Le Dôme{% endblock %}
+
+{% block body %}
+<div class="container my-5">
+    <h1 class="text-center mb-5">
+        <i class="bi bi-book"></i> Notre Menu
+    </h1>
+
+    <!-- Entrées -->
+    {% if entrees|length > 0 %}
+    <div class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">
+            <i class="bi bi-egg"></i> Entrées
+        </h2>
+        <div class="row">
+            {% for dish in entrees %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Section Plats Chauds -->
+    <div class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">
+            <i class="bi bi-fire"></i> Nos Plats Chauds
+        </h2>
+
+        <!-- Burgers -->
+        {% if burgers|length > 0 %}
+        <h3 class="mt-4 mb-3 text-primary">
+            <i class="bi bi-list"></i> Burgers
+        </h3>
+        <div class="row">
+            {% for dish in burgers %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Viandes -->
+        {% if viandes|length > 0 %}
+        <h3 class="mt-4 mb-3 text-primary">
+            <i class="bi bi-list"></i> Viandes
+        </h3>
+        <div class="row">
+            {% for dish in viandes %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Pâtes -->
+        {% if pates|length > 0 %}
+        <h3 class="mt-4 mb-3 text-primary">
+            <i class="bi bi-list"></i> Pâtes
+        </h3>
+        <div class="row">
+            {% for dish in pates %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Tartares -->
+        {% if tartares|length > 0 %}
+        <h3 class="mt-4 mb-3 text-primary">
+            <i class="bi bi-list"></i> Tartares
+        </h3>
+        <div class="row">
+            {% for dish in tartares %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <!-- Poissons -->
+        {% if poissons|length > 0 %}
+        <h3 class="mt-4 mb-3 text-primary">
+            <i class="bi bi-list"></i> Poissons
+        </h3>
+        <div class="row">
+            {% for dish in poissons %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+
+    <!-- Fromages -->
+    {% if fromages|length > 0 %}
+    <div class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">
+            <i class="bi bi-square"></i> Fromages
+        </h2>
+        <div class="row">
+            {% for dish in fromages %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Desserts -->
+    {% if desserts|length > 0 %}
+    <div class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">
+            <i class="bi bi-cup-straw"></i> Desserts
+        </h2>
+        <div class="row">
+            {% for dish in desserts %}
+            <div class="col-md-6 col-lg-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted">{{ dish.description }}</p>
+                        {% endif %}
+                        <div class="d-flex justify-content-between align-items-center flex-wrap">
+                            <span class="price">{{ dish.price }}€</span>
+                            {% if dish.allergens|length > 0 %}
+                            <div>
+                                {% for allergen in dish.allergens %}
+                                <span class="badge bg-warning text-dark allergen-badge">
+                                    <i class="bi bi-exclamation-triangle"></i> {{ allergen.name }}
+                                </span>
+                                {% endfor %}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Boissons Soft -->
+    {% if boissonsSoft|length > 0 %}
+    <div class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">
+            <i class="bi bi-cup"></i> Boissons Sans Alcool
+        </h2>
+        <div class="row">
+            {% for dish in boissonsSoft %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted small">{{ dish.description }}</p>
+                        {% endif %}
+                        <span class="price">{{ dish.price }}€</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Boissons Alcoolisées -->
+    {% if boissonsAlcool|length > 0 %}
+    <div class="mb-5">
+        <h2 class="border-bottom pb-2 mb-4">
+            <i class="bi bi-wine"></i> Boissons Alcoolisées
+        </h2>
+        <div class="row">
+            {% for dish in boissonsAlcool %}
+            <div class="col-md-6 col-lg-3 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ dish.name }}</h5>
+                        {% if dish.description %}
+                        <p class="card-text text-muted small">{{ dish.description }}</p>
+                        {% endif %}
+                        <span class="price">{{ dish.price }}€</span>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Informations allergènes -->
+    <div class="alert alert-info">
+        <h5><i class="bi bi-info-circle"></i> Information Allergènes</h5>
+        <p class="mb-0">
+            Si vous souffrez d'allergies alimentaires, n'hésitez pas à consulter notre personnel. 
+            Nous faisons de notre mieux pour vous informer des allergènes présents dans nos plats.
+        </p>
+    </div>
+
+    <!-- Call to action -->
+    <div class="text-center mt-5">
+        <a href="{{ path('app_reservation') }}" class="btn btn-primary btn-lg">
+            <i class="bi bi-calendar-check"></i> Réserver une table
+        </a>
+    </div>
+</div>
+{% endblock %}
