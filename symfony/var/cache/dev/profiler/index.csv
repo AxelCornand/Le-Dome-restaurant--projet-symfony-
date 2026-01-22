@@ -42,3 +42,4 @@ d4f77c,172.18.0.1,GET,http://localhost:8080/sub/category,1769022905,,200,request
 99e5d7,172.18.0.1,GET,http://localhost:8080/,1769105197,,200,request
 10df48,172.18.0.1,GET,http://localhost:8080/favicon.ico,1769105201,c43226,404,request
 c43226,172.18.0.1,GET,http://localhost:8080/favicon.ico,1769105201,,404,request
+a57ab0,172.18.0.1,GET,http://localhost:8080/,1769105533,,200,request
