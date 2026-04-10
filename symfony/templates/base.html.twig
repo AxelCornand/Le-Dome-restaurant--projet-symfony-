@@ -78,18 +78,18 @@
                     </li>
 
                     {% if is_granted('ROLE_ADMIN') %}
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown">
-                <i class="bi bi-gear"></i> Admin
-            </a>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{{ path('app_dish_index') }}">Gestion Plats</a></li>
-                <li><a class="dropdown-item" href="{{ path('app_category_index') }}">Gestion Catégories</a></li>
-                <li><a class="dropdown-item" href="{{ path('app_allergen_index') }}">Gestion Allergènes</a></li>
-                <li><a class="dropdown-item" href="{{ path('app_reservation_index') }}">Gestion Réservations</a></li>
-            </ul>
-        </li>
-        {% endif %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="adminDropdown" role="button" data-bs-toggle="dropdown">
+                            <i class="bi bi-gear"></i> Admin
+                        </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="{{ path('app_dish_index') }}">Gestion Plats</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_category_index') }}">Gestion Catégories</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_allergen_index') }}">Gestion Allergènes</a></li>
+                    <li><a class="dropdown-item" href="{{ path('app_reservation_index') }}">Gestion Réservations</a></li>
+                </ul>
+                    </li>
+                    {% endif %}
         
         {% if app.user %}
         <li class="nav-item">
@@ -97,18 +97,20 @@
                 <i class="bi bi-box-arrow-right"></i> Déconnexion ({{ app.user.email }})
             </a>
         </li>
-        {% else %}
+        {% endif %}
         <li class="nav-item">
             <a class="nav-link" href="{{ path('app_login') }}">
                 <i class="bi bi-box-arrow-in-right"></i> Connexion
             </a>
         </li>
+        {% if is_granted('ROLE_ADMIN') %}
         <li class="nav-item">
             <a class="nav-link" href="{{ path('app_register') }}">
                 <i class="bi bi-box-arrow-in-right"></i> Inscription
             </a>
         </li>
         {% endif %}
+
                 </ul>
             </div>
         </div>

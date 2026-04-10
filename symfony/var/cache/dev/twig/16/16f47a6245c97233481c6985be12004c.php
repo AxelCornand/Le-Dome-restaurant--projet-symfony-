@@ -113,30 +113,30 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         // line 80
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 81
-            yield "        <li class=\"nav-item dropdown\">
-            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"adminDropdown\" role=\"button\" data-bs-toggle=\"dropdown\">
-                <i class=\"bi bi-gear\"></i> Admin
-            </a>
-            <ul class=\"dropdown-menu\">
-                <li><a class=\"dropdown-item\" href=\"";
+            yield "                    <li class=\"nav-item dropdown\">
+                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"adminDropdown\" role=\"button\" data-bs-toggle=\"dropdown\">
+                            <i class=\"bi bi-gear\"></i> Admin
+                        </a>
+                <ul class=\"dropdown-menu\">
+                    <li><a class=\"dropdown-item\" href=\"";
             // line 86
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dish_index");
             yield "\">Gestion Plats</a></li>
-                <li><a class=\"dropdown-item\" href=\"";
+                    <li><a class=\"dropdown-item\" href=\"";
             // line 87
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_category_index");
             yield "\">Gestion Catégories</a></li>
-                <li><a class=\"dropdown-item\" href=\"";
+                    <li><a class=\"dropdown-item\" href=\"";
             // line 88
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_allergen_index");
             yield "\">Gestion Allergènes</a></li>
-                <li><a class=\"dropdown-item\" href=\"";
+                    <li><a class=\"dropdown-item\" href=\"";
             // line 89
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_index");
             yield "\">Gestion Réservations</a></li>
-            </ul>
-        </li>
-        ";
+                </ul>
+                    </li>
+                    ";
         }
         // line 93
         yield "        
@@ -156,19 +156,23 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
             </a>
         </li>
         ";
-        } else {
-            // line 101
-            yield "        <li class=\"nav-item\">
+        }
+        // line 101
+        yield "        <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"";
-            // line 102
-            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            yield "\">
+        // line 102
+        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+        yield "\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Connexion
             </a>
         </li>
-        <li class=\"nav-item\">
-            <a class=\"nav-link\" href=\"";
+        ";
+        // line 106
+        if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
             // line 107
+            yield "        <li class=\"nav-item\">
+            <a class=\"nav-link\" href=\"";
+            // line 108
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             yield "\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Inscription
@@ -176,8 +180,9 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         </li>
         ";
         }
-        // line 112
-        yield "                </ul>
+        // line 113
+        yield "
+                </ul>
             </div>
         </div>
     </nav>
@@ -185,21 +190,21 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
     <!-- Flash Messages -->
     <div class=\"container mt-3\">
         ";
-        // line 119
+        // line 121
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 119, $this->source); })()), "flashes", [], "any", false, false, false, 119));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 121, $this->source); })()), "flashes", [], "any", false, false, false, 121));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 120
+            // line 122
             yield "            ";
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 121
+                // line 123
                 yield "                <div class=\"alert alert-";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["label"], "html", null, true);
                 yield " alert-dismissible fade show\" role=\"alert\">
                     ";
-                // line 122
+                // line 124
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
                 yield "
                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>
@@ -209,20 +214,20 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 126
+            // line 128
             yield "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['label'], $context['messages'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 127
+        // line 129
         yield "    </div>
 
     <!-- Main Content -->
     ";
-        // line 130
+        // line 132
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 131
+        // line 133
         yield "
     <!-- Footer -->
     <footer class=\"mt-5\">
@@ -250,7 +255,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
             <hr class=\"bg-light\">
             <div class=\"text-center\">
                 <p>&copy; ";
-        // line 157
+        // line 159
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate("now", "Y"), "html", null, true);
         yield " Restaurant Le Dome - Tous droits réservés</p>
             </div>
@@ -260,9 +265,9 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
     <!-- Bootstrap JS -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
     ";
-        // line 164
+        // line 166
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 165
+        // line 167
         yield "</body>
 </html>";
         
@@ -360,7 +365,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         yield from [];
     }
 
-    // line 130
+    // line 132
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -382,7 +387,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         yield from [];
     }
 
-    // line 164
+    // line 166
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -425,7 +430,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  386 => 164,  364 => 130,  314 => 14,  301 => 13,  278 => 6,  266 => 165,  264 => 164,  254 => 157,  226 => 131,  224 => 130,  219 => 127,  213 => 126,  203 => 122,  198 => 121,  193 => 120,  189 => 119,  180 => 112,  172 => 107,  164 => 102,  161 => 101,  154 => 97,  150 => 96,  147 => 95,  145 => 94,  142 => 93,  135 => 89,  131 => 88,  127 => 87,  123 => 86,  116 => 81,  114 => 80,  108 => 77,  102 => 74,  96 => 71,  90 => 68,  78 => 59,  71 => 54,  69 => 13,  59 => 6,  52 => 1,);
+        return array (  391 => 166,  369 => 132,  319 => 14,  306 => 13,  283 => 6,  271 => 167,  269 => 166,  259 => 159,  231 => 133,  229 => 132,  224 => 129,  218 => 128,  208 => 124,  203 => 123,  198 => 122,  194 => 121,  184 => 113,  176 => 108,  173 => 107,  171 => 106,  164 => 102,  161 => 101,  154 => 97,  150 => 96,  147 => 95,  145 => 94,  142 => 93,  135 => 89,  131 => 88,  127 => 87,  123 => 86,  116 => 81,  114 => 80,  108 => 77,  102 => 74,  96 => 71,  90 => 68,  78 => 59,  71 => 54,  69 => 13,  59 => 6,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -510,18 +515,18 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
                     </li>
 
                     {% if is_granted('ROLE_ADMIN') %}
-        <li class=\"nav-item dropdown\">
-            <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"adminDropdown\" role=\"button\" data-bs-toggle=\"dropdown\">
-                <i class=\"bi bi-gear\"></i> Admin
-            </a>
-            <ul class=\"dropdown-menu\">
-                <li><a class=\"dropdown-item\" href=\"{{ path('app_dish_index') }}\">Gestion Plats</a></li>
-                <li><a class=\"dropdown-item\" href=\"{{ path('app_category_index') }}\">Gestion Catégories</a></li>
-                <li><a class=\"dropdown-item\" href=\"{{ path('app_allergen_index') }}\">Gestion Allergènes</a></li>
-                <li><a class=\"dropdown-item\" href=\"{{ path('app_reservation_index') }}\">Gestion Réservations</a></li>
-            </ul>
-        </li>
-        {% endif %}
+                    <li class=\"nav-item dropdown\">
+                        <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"adminDropdown\" role=\"button\" data-bs-toggle=\"dropdown\">
+                            <i class=\"bi bi-gear\"></i> Admin
+                        </a>
+                <ul class=\"dropdown-menu\">
+                    <li><a class=\"dropdown-item\" href=\"{{ path('app_dish_index') }}\">Gestion Plats</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path('app_category_index') }}\">Gestion Catégories</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path('app_allergen_index') }}\">Gestion Allergènes</a></li>
+                    <li><a class=\"dropdown-item\" href=\"{{ path('app_reservation_index') }}\">Gestion Réservations</a></li>
+                </ul>
+                    </li>
+                    {% endif %}
         
         {% if app.user %}
         <li class=\"nav-item\">
@@ -529,18 +534,20 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
                 <i class=\"bi bi-box-arrow-right\"></i> Déconnexion ({{ app.user.email }})
             </a>
         </li>
-        {% else %}
+        {% endif %}
         <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"{{ path('app_login') }}\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Connexion
             </a>
         </li>
+        {% if is_granted('ROLE_ADMIN') %}
         <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"{{ path('app_register') }}\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Inscription
             </a>
         </li>
         {% endif %}
+
                 </ul>
             </div>
         </div>

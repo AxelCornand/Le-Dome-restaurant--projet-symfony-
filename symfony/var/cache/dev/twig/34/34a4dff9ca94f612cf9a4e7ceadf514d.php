@@ -122,7 +122,7 @@ class __TwigTemplate_3a616e81417608872825102f5ac7e490 extends Template
         yield "
                             ";
         // line 20
-        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 20, $this->source); })()), "email", [], "any", false, false, false, 20), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "admin@legourmet.fr"]]);
+        yield $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(CoreExtension::getAttribute($this->env, $this->source, (isset($context["registrationForm"]) || array_key_exists("registrationForm", $context) ? $context["registrationForm"] : (function () { throw new RuntimeError('Variable "registrationForm" does not exist.', 20, $this->source); })()), "email", [], "any", false, false, false, 20), 'widget', ["attr" => ["class" => "form-control", "placeholder" => "votre-email@.fr"]]);
         yield "
                             ";
         // line 21
@@ -258,7 +258,7 @@ class __TwigTemplate_3a616e81417608872825102f5ac7e490 extends Template
                     {{ form_start(registrationForm) }}
                         <div class=\"mb-3\">
                             {{ form_label(registrationForm.email, 'Email', {'label_attr': {'class': 'form-label'}}) }}
-                            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'admin@legourmet.fr'}}) }}
+                            {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': 'votre-email@.fr'}}) }}
                             {{ form_errors(registrationForm.email) }}
                         </div>
 
