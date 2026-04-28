@@ -158,21 +158,26 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         ";
         }
         // line 101
-        yield "        <li class=\"nav-item\">
+        yield "        ";
+        if ((($tmp =  !CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 101, $this->source); })()), "user", [], "any", false, false, false, 101)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
+            // line 102
+            yield "        <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"";
-        // line 102
-        yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-        yield "\">
+            // line 103
+            yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
+            yield "\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Connexion
             </a>
         </li>
         ";
-        // line 106
+        }
+        // line 108
+        yield "        ";
         if ((($tmp = $this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) && $tmp instanceof Markup ? (string) $tmp : $tmp)) {
-            // line 107
+            // line 109
             yield "        <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"";
-            // line 108
+            // line 110
             yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
             yield "\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Inscription
@@ -180,7 +185,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         </li>
         ";
         }
-        // line 113
+        // line 115
         yield "
                 </ul>
             </div>
@@ -190,21 +195,21 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
     <!-- Flash Messages -->
     <div class=\"container mt-3\">
         ";
-        // line 121
+        // line 123
         $context['_parent'] = $context;
-        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 121, $this->source); })()), "flashes", [], "any", false, false, false, 121));
+        $context['_seq'] = CoreExtension::ensureTraversable(CoreExtension::getAttribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 123, $this->source); })()), "flashes", [], "any", false, false, false, 123));
         foreach ($context['_seq'] as $context["label"] => $context["messages"]) {
-            // line 122
+            // line 124
             yield "            ";
             $context['_parent'] = $context;
             $context['_seq'] = CoreExtension::ensureTraversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 123
+                // line 125
                 yield "                <div class=\"alert alert-";
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["label"], "html", null, true);
                 yield " alert-dismissible fade show\" role=\"alert\">
                     ";
-                // line 124
+                // line 126
                 yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($context["message"], "html", null, true);
                 yield "
                     <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\"></button>
@@ -214,20 +219,20 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_key'], $context['message'], $context['_parent']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 128
+            // line 130
             yield "        ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['label'], $context['messages'], $context['_parent']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 129
+        // line 131
         yield "    </div>
 
     <!-- Main Content -->
     ";
-        // line 132
+        // line 134
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 133
+        // line 135
         yield "
     <!-- Footer -->
     <footer class=\"mt-5\">
@@ -255,7 +260,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
             <hr class=\"bg-light\">
             <div class=\"text-center\">
                 <p>&copy; ";
-        // line 159
+        // line 161
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate("now", "Y"), "html", null, true);
         yield " Restaurant Le Dome - Tous droits réservés</p>
             </div>
@@ -265,9 +270,9 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
     <!-- Bootstrap JS -->
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js\"></script>
     ";
-        // line 166
+        // line 168
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 167
+        // line 169
         yield "</body>
 </html>";
         
@@ -365,7 +370,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         yield from [];
     }
 
-    // line 132
+    // line 134
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -387,7 +392,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
         yield from [];
     }
 
-    // line 166
+    // line 168
     /**
      * @return iterable<null|scalar|\Stringable>
      */
@@ -430,7 +435,7 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  391 => 166,  369 => 132,  319 => 14,  306 => 13,  283 => 6,  271 => 167,  269 => 166,  259 => 159,  231 => 133,  229 => 132,  224 => 129,  218 => 128,  208 => 124,  203 => 123,  198 => 122,  194 => 121,  184 => 113,  176 => 108,  173 => 107,  171 => 106,  164 => 102,  161 => 101,  154 => 97,  150 => 96,  147 => 95,  145 => 94,  142 => 93,  135 => 89,  131 => 88,  127 => 87,  123 => 86,  116 => 81,  114 => 80,  108 => 77,  102 => 74,  96 => 71,  90 => 68,  78 => 59,  71 => 54,  69 => 13,  59 => 6,  52 => 1,);
+        return array (  396 => 168,  374 => 134,  324 => 14,  311 => 13,  288 => 6,  276 => 169,  274 => 168,  264 => 161,  236 => 135,  234 => 134,  229 => 131,  223 => 130,  213 => 126,  208 => 125,  203 => 124,  199 => 123,  189 => 115,  181 => 110,  178 => 109,  175 => 108,  167 => 103,  164 => 102,  161 => 101,  154 => 97,  150 => 96,  147 => 95,  145 => 94,  142 => 93,  135 => 89,  131 => 88,  127 => 87,  123 => 86,  116 => 81,  114 => 80,  108 => 77,  102 => 74,  96 => 71,  90 => 68,  78 => 59,  71 => 54,  69 => 13,  59 => 6,  52 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -535,11 +540,13 @@ class __TwigTemplate_b3691d594842d6f5022e3456cb0aedfa extends Template
             </a>
         </li>
         {% endif %}
+        {% if not app.user %}
         <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"{{ path('app_login') }}\">
                 <i class=\"bi bi-box-arrow-in-right\"></i> Connexion
             </a>
         </li>
+        {% endif %}
         {% if is_granted('ROLE_ADMIN') %}
         <li class=\"nav-item\">
             <a class=\"nav-link\" href=\"{{ path('app_register') }}\">

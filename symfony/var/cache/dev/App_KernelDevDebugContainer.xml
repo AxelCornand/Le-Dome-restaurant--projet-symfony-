@@ -7194,7 +7194,7 @@
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id=".security.request_matcher.WI2.f0K"/>
+        <argument type="service" id=".security.request_matcher.QUFWJL4"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
         </argument>
@@ -7874,12 +7874,12 @@
         <argument type="service" id=".security.request_matcher.2OYzEb."/>
       </argument>
     </service>
-    <service id=".security.request_matcher.DQssvUv" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
-      <argument>^/reservation/</argument>
+    <service id=".security.request_matcher.TeaIDxK" class="Symfony\Component\HttpFoundation\RequestMatcher\PathRequestMatcher">
+      <argument>^/reservation/admin</argument>
     </service>
-    <service id=".security.request_matcher.WI2.f0K" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
+    <service id=".security.request_matcher.QUFWJL4" class="Symfony\Component\HttpFoundation\ChainRequestMatcher">
       <argument type="collection">
-        <argument type="service" id=".security.request_matcher.DQssvUv"/>
+        <argument type="service" id=".security.request_matcher.TeaIDxK"/>
       </argument>
     </service>
     <service id="security.command.user_password_hash" class="Symfony\Component\PasswordHasher\Command\UserPasswordHashCommand">

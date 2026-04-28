@@ -32,6 +32,7 @@ class __TwigTemplate_0491a48a065e9b93fe5af8df034972fb extends Template
         $this->blocks = [
             'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
+            'javascripts' => [$this, 'block_javascripts'],
         ];
     }
 
@@ -243,6 +244,52 @@ class __TwigTemplate_0491a48a065e9b93fe5af8df034972fb extends Template
         yield from [];
     }
 
+    // line 81
+    /**
+     * @return iterable<null|scalar|\Stringable>
+     */
+    public function block_javascripts(array $context, array $blocks = []): iterable
+    {
+        $macros = $this->macros;
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2 = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->enter($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
+
+        // line 82
+        yield "<script>
+// Empêcher la double soumission du formulaire
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Désactiver le bouton
+    submitBtn.disabled = true;
+    
+    // Changer le texte pour indiquer que c'est en cours
+    submitBtn.innerHTML = '<span class=\"spinner-border spinner-border-sm me-2\"></span>Envoi en cours...';
+    
+    // Si le formulaire n'est pas valide, réactiver le bouton
+    if (!this.checkValidity()) {
+        e.preventDefault();
+        e.stopPropagation();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class=\"bi bi-check-circle\"></i> Confirmer ma réservation';
+    }
+    
+    this.classList.add('was-validated');
+});
+</script>
+";
+        
+        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
+
+        
+        $__internal_5a27a8ba21ca79b61932376b2fa922d2->leave($__internal_5a27a8ba21ca79b61932376b2fa922d2_prof);
+
+        yield from [];
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -264,7 +311,7 @@ class __TwigTemplate_0491a48a065e9b93fe5af8df034972fb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  229 => 73,  221 => 68,  210 => 60,  206 => 59,  202 => 58,  195 => 54,  191 => 53,  187 => 52,  178 => 46,  174 => 45,  170 => 44,  164 => 41,  160 => 40,  156 => 39,  147 => 33,  143 => 32,  139 => 31,  133 => 28,  129 => 27,  125 => 26,  118 => 22,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  261 => 82,  248 => 81,  230 => 73,  222 => 68,  211 => 60,  207 => 59,  203 => 58,  196 => 54,  192 => 53,  188 => 52,  179 => 46,  175 => 45,  171 => 44,  165 => 41,  161 => 40,  157 => 39,  148 => 33,  144 => 32,  140 => 31,  134 => 28,  130 => 27,  126 => 26,  119 => 22,  101 => 6,  88 => 5,  65 => 3,  42 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -347,6 +394,31 @@ class __TwigTemplate_0491a48a065e9b93fe5af8df034972fb extends Template
         </div>
     </div>
 </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+// Empêcher la double soumission du formulaire
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Désactiver le bouton
+    submitBtn.disabled = true;
+    
+    // Changer le texte pour indiquer que c'est en cours
+    submitBtn.innerHTML = '<span class=\"spinner-border spinner-border-sm me-2\"></span>Envoi en cours...';
+    
+    // Si le formulaire n'est pas valide, réactiver le bouton
+    if (!this.checkValidity()) {
+        e.preventDefault();
+        e.stopPropagation();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class=\"bi bi-check-circle\"></i> Confirmer ma réservation';
+    }
+    
+    this.classList.add('was-validated');
+});
+</script>
 {% endblock %}", "reservation/new.html.twig", "/var/www/symfony/templates/reservation/new.html.twig");
     }
 }

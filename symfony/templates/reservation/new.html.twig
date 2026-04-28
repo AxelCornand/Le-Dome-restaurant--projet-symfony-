@@ -77,3 +77,28 @@
     </div>
 </div>
 {% endblock %}
+
+{% block javascripts %}
+<script>
+// Empêcher la double soumission du formulaire
+document.getElementById('reservationForm').addEventListener('submit', function(e) {
+    const submitBtn = document.getElementById('submitBtn');
+    
+    // Désactiver le bouton
+    submitBtn.disabled = true;
+    
+    // Changer le texte pour indiquer que c'est en cours
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Envoi en cours...';
+    
+    // Si le formulaire n'est pas valide, réactiver le bouton
+    if (!this.checkValidity()) {
+        e.preventDefault();
+        e.stopPropagation();
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="bi bi-check-circle"></i> Confirmer ma réservation';
+    }
+    
+    this.classList.add('was-validated');
+});
+</script>
+{% endblock %}

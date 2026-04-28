@@ -49,7 +49,7 @@ security:
         - { path: ^/category, roles: ROLE_ADMIN }
         - { path: ^/allergen, roles: ROLE_ADMIN }
         - { path: ^/sub_category, roles: ROLE_ADMIN }
-        - { path: ^/reservation/, roles: ROLE_ADMIN }
+        - { path: ^/reservation/admin, roles: ROLE_ADMIN }
     
     role_hierarchy:
         ROLE_ADMIN: [ROLE_USER]

@@ -119,6 +119,19 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new RuntimeError('Variable "reservations" does not exist.', 23, $this->source); })()));
         $context['_iterated'] = false;
+        $context['loop'] = [
+          'parent' => $context['_parent'],
+          'index0' => 0,
+          'index'  => 1,
+          'first'  => true,
+        ];
+        if (is_array($context['_seq']) || (is_object($context['_seq']) && $context['_seq'] instanceof \Countable)) {
+            $length = count($context['_seq']);
+            $context['loop']['revindex0'] = $length - 1;
+            $context['loop']['revindex'] = $length;
+            $context['loop']['length'] = $length;
+            $context['loop']['last'] = 1 === $length;
+        }
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
             // line 24
             yield "            <tr>
@@ -163,23 +176,35 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
             // line 35
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 35)]), "html", null, true);
             yield "\">edit</a>
+                    ";
+            // line 36
+            yield Twig\Extension\CoreExtension::include($this->env, $context, "reservation/_delete_form.html.twig");
+            yield "
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
+            ++$context['loop']['index0'];
+            ++$context['loop']['index'];
+            $context['loop']['first'] = false;
+            if (isset($context['loop']['revindex0'], $context['loop']['revindex'])) {
+                --$context['loop']['revindex0'];
+                --$context['loop']['revindex'];
+                $context['loop']['last'] = 0 === $context['loop']['revindex0'];
+            }
         }
-        // line 38
+        // line 39
         if (!$context['_iterated']) {
-            // line 39
+            // line 40
             yield "            <tr>
                 <td colspan=\"9\">no records found</td>
             </tr>
         ";
         }
         $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_key'], $context['reservation'], $context['_parent'], $context['_iterated']);
+        unset($context['_seq'], $context['_key'], $context['reservation'], $context['_parent'], $context['_iterated'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 43
+        // line 44
         yield "        </tbody>
     </table>
 ";
@@ -213,7 +238,7 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  183 => 43,  174 => 39,  172 => 38,  164 => 35,  160 => 34,  155 => 32,  151 => 31,  147 => 30,  143 => 29,  139 => 28,  135 => 27,  131 => 26,  127 => 25,  124 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  208 => 44,  199 => 40,  197 => 39,  181 => 36,  177 => 35,  173 => 34,  168 => 32,  164 => 31,  160 => 30,  156 => 29,  152 => 28,  148 => 27,  144 => 26,  140 => 25,  137 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -253,6 +278,7 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
                 <td>
                     <a href=\"{{ path('app_reservation_show', {'id': reservation.id}) }}\">show</a>
                     <a href=\"{{ path('app_reservation_edit', {'id': reservation.id}) }}\">edit</a>
+                    {{ include('reservation/_delete_form.html.twig') }}
                 </td>
             </tr>
         {% else %}
