@@ -97,24 +97,24 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        yield "    <h1>Reservation index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>ReservationDate</th>
-                <th>NumberOfPeople</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        ";
+        yield "    <h1 class=\"text-center mb-4\">Réservations index</h1>
+        <div class=\"container\">
+            <table class=\"table\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>ReservationDate</th>
+                        <th>NumberOfPeople</th>
+                        <th>CreatedAt</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                ";
         // line 23
         $context['_parent'] = $context;
         $context['_seq'] = CoreExtension::ensureTraversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new RuntimeError('Variable "reservations" does not exist.', 23, $this->source); })()));
@@ -134,55 +134,63 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
         }
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
             // line 24
-            yield "            <tr>
-                <td>";
+            yield "                    <tr>
+                        <td>";
             // line 25
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 25), "html", null, true);
             yield "</td>
-                <td>";
+                        <td>";
             // line 26
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "firstName", [], "any", false, false, false, 26), "html", null, true);
             yield "</td>
-                <td>";
+                        <td>";
             // line 27
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "lastName", [], "any", false, false, false, 27), "html", null, true);
             yield "</td>
-                <td>";
+                        <td>";
             // line 28
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "email", [], "any", false, false, false, 28), "html", null, true);
             yield "</td>
-                <td>";
+                        <td>";
             // line 29
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "phone", [], "any", false, false, false, 29), "html", null, true);
             yield "</td>
-                <td>";
+                        <td>";
             // line 30
             yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "reservationDate", [], "any", false, false, false, 30)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "reservationDate", [], "any", false, false, false, 30), "Y-m-d H:i:s"), "html", null, true)) : (""));
             yield "</td>
-                <td>";
+                        <td>";
             // line 31
             yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "numberOfPeople", [], "any", false, false, false, 31), "html", null, true);
             yield "</td>
-                <td>";
+                        <td>";
             // line 32
             yield (((($tmp = CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "createdAt", [], "any", false, false, false, 32)) && $tmp instanceof Markup ? (string) $tmp : $tmp)) ? ($this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate(CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "createdAt", [], "any", false, false, false, 32), "Y-m-d H:i:s"), "html", null, true)) : (""));
             yield "</td>
-                <td>
-                    <a href=\"";
-            // line 34
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 34)]), "html", null, true);
-            yield "\">show</a>
-                    <a href=\"";
+                        <td>
+                            <div class=\"btn-group\" role=\"group\">
+                                <a href=\"";
             // line 35
-            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 35)]), "html", null, true);
-            yield "\">edit</a>
-                    ";
-            // line 36
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_show", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 35)]), "html", null, true);
+            yield "\" 
+                                class=\"btn btn-sm btn-info me-2\">
+                                    Voir
+                                </a>
+                                <a href=\"";
+            // line 39
+            yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_edit", ["id" => CoreExtension::getAttribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 39)]), "html", null, true);
+            yield "\" 
+                                class=\"btn btn-sm btn-warning me-2\">
+                                    Modifier
+                                </a>
+                                ";
+            // line 43
             yield Twig\Extension\CoreExtension::include($this->env, $context, "reservation/_delete_form.html.twig");
             yield "
-                </td>
-            </tr>
-        ";
+                            </div>
+                        </td>
+                    </tr>
+                ";
             $context['_iterated'] = true;
             ++$context['loop']['index0'];
             ++$context['loop']['index'];
@@ -193,20 +201,21 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
                 $context['loop']['last'] = 0 === $context['loop']['revindex0'];
             }
         }
-        // line 39
+        // line 47
         if (!$context['_iterated']) {
-            // line 40
-            yield "            <tr>
-                <td colspan=\"9\">no records found</td>
-            </tr>
-        ";
+            // line 48
+            yield "                    <tr>
+                        <td colspan=\"9\">no records found</td>
+                    </tr>
+                ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_key'], $context['reservation'], $context['_parent'], $context['_iterated'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 44
-        yield "        </tbody>
-    </table>
+        // line 52
+        yield "                </tbody>
+            </table>
+        </div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -238,7 +247,7 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
      */
     public function getDebugInfo(): array
     {
-        return array (  208 => 44,  199 => 40,  197 => 39,  181 => 36,  177 => 35,  173 => 34,  168 => 32,  164 => 31,  160 => 30,  156 => 29,  152 => 28,  148 => 27,  144 => 26,  140 => 25,  137 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
+        return array (  216 => 52,  207 => 48,  205 => 47,  188 => 43,  181 => 39,  174 => 35,  168 => 32,  164 => 31,  160 => 30,  156 => 29,  152 => 28,  148 => 27,  144 => 26,  140 => 25,  137 => 24,  119 => 23,  100 => 6,  87 => 5,  64 => 3,  41 => 1,);
     }
 
     public function getSourceContext(): Source
@@ -248,46 +257,55 @@ class __TwigTemplate_1ae046563fd3220ddbe63fbe1f15b6cb extends Template
 {% block title %}Reservation index{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
-
-    <table class=\"table\">
-        <thead>
-            <tr>
-                <th>Id</th>
-                <th>FirstName</th>
-                <th>LastName</th>
-                <th>Email</th>
-                <th>Phone</th>
-                <th>ReservationDate</th>
-                <th>NumberOfPeople</th>
-                <th>CreatedAt</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for reservation in reservations %}
-            <tr>
-                <td>{{ reservation.id }}</td>
-                <td>{{ reservation.firstName }}</td>
-                <td>{{ reservation.lastName }}</td>
-                <td>{{ reservation.email }}</td>
-                <td>{{ reservation.phone }}</td>
-                <td>{{ reservation.reservationDate ? reservation.reservationDate|date('Y-m-d H:i:s') : '' }}</td>
-                <td>{{ reservation.numberOfPeople }}</td>
-                <td>{{ reservation.createdAt ? reservation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
-                <td>
-                    <a href=\"{{ path('app_reservation_show', {'id': reservation.id}) }}\">show</a>
-                    <a href=\"{{ path('app_reservation_edit', {'id': reservation.id}) }}\">edit</a>
-                    {{ include('reservation/_delete_form.html.twig') }}
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan=\"9\">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+    <h1 class=\"text-center mb-4\">Réservations index</h1>
+        <div class=\"container\">
+            <table class=\"table\">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>ReservationDate</th>
+                        <th>NumberOfPeople</th>
+                        <th>CreatedAt</th>
+                        <th>actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for reservation in reservations %}
+                    <tr>
+                        <td>{{ reservation.id }}</td>
+                        <td>{{ reservation.firstName }}</td>
+                        <td>{{ reservation.lastName }}</td>
+                        <td>{{ reservation.email }}</td>
+                        <td>{{ reservation.phone }}</td>
+                        <td>{{ reservation.reservationDate ? reservation.reservationDate|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ reservation.numberOfPeople }}</td>
+                        <td>{{ reservation.createdAt ? reservation.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <div class=\"btn-group\" role=\"group\">
+                                <a href=\"{{ path('app_reservation_show', {'id': reservation.id}) }}\" 
+                                class=\"btn btn-sm btn-info me-2\">
+                                    Voir
+                                </a>
+                                <a href=\"{{ path('app_reservation_edit', {'id': reservation.id}) }}\" 
+                                class=\"btn btn-sm btn-warning me-2\">
+                                    Modifier
+                                </a>
+                                {{ include('reservation/_delete_form.html.twig') }}
+                            </div>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan=\"9\">no records found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
 {% endblock %}
 ", "reservation/index.html.twig", "/var/www/symfony/templates/reservation/index.html.twig");
     }
